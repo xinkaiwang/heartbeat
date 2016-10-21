@@ -1,0 +1,31 @@
+{
+  "name": "heartbeat",
+  "version": "0.0.1",
+  "description": "heartbeat manager to report 1 hb message (to rain service) once per minute",
+  "main": "lib/heartbeatDaemon.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xinkaiwang/heartbeat.git"
+  },
+  "keywords": [
+    "heartbeat",
+    "monitoring",
+    "rain",
+    "splunk",
+    "elastic",
+    "search"
+  ],
+  "author": "Xinkai Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xinkaiwang/heartbeat/issues"
+  },
+  "homepage": "https://github.com/xinkaiwang/heartbeat",
+  "dependencies": {
+    "ps-node": "0.1.4",
+    "underscore": "1.8.3"
+  }
+}
