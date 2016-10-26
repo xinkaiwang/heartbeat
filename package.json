@@ -1,7 +1,7 @@
 {
   "name": "heartbeat",
-  "version": "0.0.1",
-  "description": "heartbeat manager to report 1 hb message (to rain service) once per minute",
+  "version": "0.1.1",
+  "description": "heartbeat manager to report 1 heartbeat message (to rain service) once per minute",
   "main": "lib/heartbeatDaemon.js",
   "scripts": {
     "test": "mocha"
@@ -33,7 +33,8 @@
     "vmstat-s": "0.1.22",
     "ifconfig-linux": "0.1.0",
     "object-path": "0.11.2",
-    "bluebird": "~3.4.6",
-    "underscore.string": "~3.3.4"
+    "bluebird": "3.4.6",
+    "underscore.string": "3.3.4",
+    "df": "1.1.1"
   }
 }
