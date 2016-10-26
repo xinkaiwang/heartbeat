@@ -6,6 +6,9 @@
   "scripts": {
     "test": "mocha"
   },
+  "bin": {
+    "heartbeat": "index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/xinkaiwang/heartbeat.git"
@@ -26,6 +29,11 @@
   "homepage": "https://github.com/xinkaiwang/heartbeat",
   "dependencies": {
     "ps-node": "0.1.4",
-    "underscore": "1.8.3"
+    "underscore": "1.8.3",
+    "vmstat-s": "0.1.22",
+    "ifconfig-linux": "0.1.0",
+    "object-path": "0.11.2",
+    "bluebird": "~3.4.6",
+    "underscore.string": "~3.3.4"
   }
 }
