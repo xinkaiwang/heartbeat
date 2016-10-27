@@ -1,6 +1,6 @@
 {
-  "name": "heartbeat",
-  "version": "0.1.2",
+  "name": "hostagent",
+  "version": "0.1.3",
   "description": "heartbeat manager to report 1 heartbeat message (to rain service) once per minute",
   "main": "lib/heartbeatDaemon.js",
   "scripts": {

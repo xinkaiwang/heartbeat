@@ -22,7 +22,7 @@ var lastHeartbeatTime;
 function collectData() {
     setTimeout(collectData, heartbeatInterval*1000);
     var data = {
-        event: 'machineAgent'
+        event: 'hostAgent'
     };
     _.extend(data, hostName());
     _.extend(data, cpu());
