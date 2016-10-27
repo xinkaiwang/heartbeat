@@ -4,6 +4,7 @@
 var _ = require('underscore');
 var hostName = require('./lib/hostName');
 var cpu = require('./lib/cpu');
+var os = require('./lib/os');
 var network = require('./lib/network');
 var disk = require('./lib/disk');
 var config = require('./lib/config');
@@ -20,9 +21,12 @@ function logHeartbeat(hb) {
 var lastHeartbeatTime;
 function collectData() {
     setTimeout(collectData, heartbeatInterval*1000);
-    var data = {};
+    var data = {
+        event: 'machineAgent'
+    };
     _.extend(data, hostName());
     _.extend(data, cpu());
+    _.extend(data, os()); // 'cpuCount'
 
     network()
     .then(function(networkSummary) {
