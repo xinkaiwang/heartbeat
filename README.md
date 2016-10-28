@@ -40,7 +40,8 @@ vi config.js
   "hbIntervalSeconds": 60,
   "host": "ubuntu-2gb-sfo1-01",
   "time": 1477622882321
-}```
+}
+```
 
 # TODO list
 * better README :)
