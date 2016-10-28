@@ -21,27 +21,26 @@ vi config.js
 ```
 {
   "event": "hostAgent",
-  "host": "ubuntu-2gb-sfo1-01",
   "arch": "x64",
-  "os": "Linux",
-  "osRelease": "3.13.0-79-generic",
   "totalMemoryMB": 2002,
-  "uptimeMinutes": 4012,
+  "uptimeMinutes": 4620,
   "memTotalMB": 2002,
-  "memPercent": 63,
-  "memMB": 1261,
+  "memPercent": 62,
+  "memMB": 1242,
   "cpu": 7,
-  "cpuDetail": "3,9,13,4,4,9",
+  "cpuDetail": "6,3,13,5,2,13",
   "cpuCount": 2,
-  "rxKByte": 25,
-  "txKByte": 25,
-  "rxPacket": 134,
-  "txPacket": 137,
+  "os": "Ubuntu 14.04.4 LTS",
+  "rxKByte": 24,
+  "txKByte": 24,
+  "rxPacket": 111,
+  "txPacket": 112,
+  "diskUsedMB": 10860,
   "diskPercent": 29,
   "hbIntervalSeconds": 60,
-  "time": 1477586390050
-}
-```
+  "host": "ubuntu-2gb-sfo1-01",
+  "time": 1477622882321
+}```
 
 # TODO list
 * better README :)
