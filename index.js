@@ -5,6 +5,7 @@ var _ = require('underscore');
 var hostName = require('./lib/hostName');
 var cpu = require('./lib/cpu');
 var os = require('./lib/os');
+var linuxRelease = require('./lib/linuxRelease');
 var network = require('./lib/network');
 var disk = require('./lib/disk');
 var config = require('./lib/config');
@@ -24,9 +25,10 @@ function collectData() {
     var data = {
         event: 'hostAgent'
     };
-    _.extend(data, hostName());
+    _.extend(data, hostName()); // 'host', 'arch', 'totalMemoryMB', 'uptimeMinutes'
     _.extend(data, cpu());
     _.extend(data, os()); // 'cpuCount'
+    _.extend(data, linuxRelease()); // 'osRelease'
 
     network()
     .then(function(networkSummary) {
