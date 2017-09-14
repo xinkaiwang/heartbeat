@@ -1,6 +1,6 @@
 {
   "name": "hostagent",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "heartbeat manager to report 1 heartbeat message (to rain service) once per minute",
   "main": "lib/heartbeatDaemon.js",
   "scripts": {
@@ -28,15 +28,15 @@
   },
   "homepage": "https://github.com/xinkaiwang/heartbeat",
   "dependencies": {
-    "ps-node": "0.1.4",
+    "ps-node": "0.1.6",
     "underscore": "1.8.3",
     "vmstat-s": "0.2.0",
     "ifconfig-linux": "0.1.0",
-    "object-path": "0.11.2",
-    "bluebird": "3.4.6",
+    "object-path": "0.11.4",
+    "bluebird": "3.5.0",
     "underscore.string": "3.3.4",
     "df": "1.1.1",
-    "request": "2.76.0",
+    "request": "2.81.0",
     "lsb-release": "0.1.0"
   }
 }
