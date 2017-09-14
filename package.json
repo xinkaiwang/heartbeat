@@ -30,7 +30,7 @@
   "dependencies": {
     "ps-node": "0.1.4",
     "underscore": "1.8.3",
-    "vmstat-s": "0.1.22",
+    "vmstat-s": "0.2.0",
     "ifconfig-linux": "0.1.0",
     "object-path": "0.11.2",
     "bluebird": "3.4.6",
