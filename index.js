@@ -7,8 +7,9 @@ var cpu = require('./lib/cpu');
 var os = require('./lib/os');
 var linuxRelease = require('./lib/linuxRelease');
 var network = require('./lib/network');
+var ipAddr = require('./lib/ipAddr');
 var disk = require('./lib/disk');
-var config = require('./lib/config');
+var config = require('./config');
 
 var heartbeatInterval = config.heartbeatIntervalSeconds || 60; // default 60 seconds
 
@@ -33,6 +34,10 @@ function collectData() {
     network()
     .then(function(networkSummary) {
         _.extend(data, networkSummary);
+    })
+    .then(ipAddr)
+    .then(function(ipAddrSummary) {
+        _.extend(data, ipAddrSummary);
     })
     .then(disk)
     .then(function(diskSummary) {
