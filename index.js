@@ -8,6 +8,7 @@ var os = require('./lib/os');
 var linuxRelease = require('./lib/linuxRelease');
 var network = require('./lib/network');
 var ipAddr = require('./lib/ipAddr');
+var piCpuTemp = require('./lib/piCpuTemp');
 var disk = require('./lib/disk');
 var config = require('./config');
 
@@ -42,6 +43,10 @@ function collectData() {
     .then(disk)
     .then(function(diskSummary) {
         _.extend(data, diskSummary);
+    })
+    .then(piCpuTemp)
+    .then(function(piCpuTempSummary) {
+        _.extend(data, piCpuTempSummary);
     })
     .then(function() {
         delete(data.upTimeInSeconds);
