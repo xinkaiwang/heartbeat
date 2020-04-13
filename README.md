@@ -43,6 +43,26 @@ vi config.js
 }
 ```
 
+## build with docker
+```
+docker build --tag heartbeat:0.2.0 .
+docker tag heartbeat:0.2.0 xinkaiw/heartbeat:0.2.0
+docker push xinkaiw/heartbeat:0.2.0
+```
+
+## build with gcp build API
+```
+gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/heartbeat .
+gcloud builds submit --tag gcr.io/poseidon-xwang/heartbeat .
+```
+
+## run with docker
+```
+docker run --detach --name heartbeat heartbeat:0.2.0
+docker kill heartbeat
+docker rm heartbeat
+```
+
 # TODO list
 * better README :)
 * detailed process list (cpu usage)
