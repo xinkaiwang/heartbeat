@@ -1,0 +1,94 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    deployment.kubernetes.io/revision: "14"
+  creationTimestamp: "2020-04-12T03:26:18Z"
+  generation: 1088
+  labels:
+    app: hello
+  name: hello
+  namespace: default
+  resourceVersion: "1166098"
+  selfLink: /apis/apps/v1/namespaces/default/deployments/hello
+  uid: 5fa33c07-7c6d-11ea-85ac-42010a8a0015
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: hello
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hello
+    spec:
+      containers:
+      - env:
+        - name: MY_VARIABLE
+          value: Warm greetings to xinkai
+        image: gcr.io/poseidon-xwang/hello@sha256:bf215f0e129eace546017a5013082b44c732e37896221ebc9e9a517981ded4d9
+        imagePullPolicy: IfNotPresent
+        name: hello
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      - env:
+        - name: MY_node
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: spec.nodeName
+        - name: MY_namespace
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+        - name: MY_serviceAccount
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: spec.serviceAccountName
+        - name: MY_app
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.labels['app']
+        image: gcr.io/poseidon-xwang/heartbeat@sha256:6b94442287099ad448ec54798981d4293c4a83d83ff3f32770ad216f60d9c14b
+        imagePullPolicy: IfNotPresent
+        name: heartbeat
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      shareProcessNamespace: true
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 2
+  conditions:
+  - lastTransitionTime: "2020-04-12T03:26:18Z"
+    lastUpdateTime: "2020-04-14T01:47:30Z"
+    message: ReplicaSet "hello-75f486cd9f" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: "True"
+    type: Progressing
+  - lastTransitionTime: "2020-04-14T02:49:08Z"
+    lastUpdateTime: "2020-04-14T02:49:08Z"
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: "True"
+    type: Available
+  observedGeneration: 1088
+  readyReplicas: 2
+  replicas: 2
+  updatedReplicas: 2
