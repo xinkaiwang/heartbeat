@@ -45,9 +45,9 @@ vi config.js
 
 ## build with docker
 ```
-docker build --tag heartbeat:0.2.0 .
-docker tag heartbeat:0.2.0 xinkaiw/heartbeat:0.2.0
-docker push xinkaiw/heartbeat:0.2.0
+docker build --tag heartbeat:0.2.8 .
+docker tag heartbeat:0.2.8 xinkaiw/heartbeat:0.2.8
+docker push xinkaiw/heartbeat:0.2.8
 ```
 
 ## build with gcp build API
@@ -58,7 +58,7 @@ gcloud builds submit --tag gcr.io/poseidon-xwang/heartbeat .
 
 ## run with docker
 ```
-docker run --detach --name heartbeat heartbeat:0.2.0
+docker run --detach --name heartbeat heartbeat:0.2.5
 docker kill heartbeat
 docker rm heartbeat
 ```

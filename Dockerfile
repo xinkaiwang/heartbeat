@@ -12,6 +12,7 @@ RUN npm install
 
 RUN apt-get update
 RUN apt-get install -y jq
+RUN apt-get install -y net-tools
 
 # Run the specified command within the container.
 CMD [ "./heartbeat.js" ]
