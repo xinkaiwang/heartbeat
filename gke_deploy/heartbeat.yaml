@@ -32,6 +32,8 @@ spec:
     spec:
       containers:
       - env:
+        - name: MY_cloud
+          value: gcp
         - name: MY_node
           valueFrom:
             fieldRef:

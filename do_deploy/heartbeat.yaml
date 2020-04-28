@@ -27,6 +27,8 @@ spec:
     spec:
       containers:
       - env:
+        - name: MY_cloud
+          value: do
         - name: MY_node
           valueFrom:
             fieldRef:

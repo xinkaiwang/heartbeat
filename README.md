@@ -45,13 +45,15 @@ vi config.js
 
 ## build with docker
 ```
-docker build --tag heartbeat:0.2.8 .
-docker tag heartbeat:0.2.8 xinkaiw/heartbeat:0.2.8
-docker push xinkaiw/heartbeat:0.2.8
+export HEARTBEAT_VERSION="0.2.9"
+docker build --tag heartbeat:${HEARTBEAT_VERSION} .
+docker tag heartbeat:${HEARTBEAT_VERSION} xinkaiw/heartbeat:${HEARTBEAT_VERSION}
+docker push xinkaiw/heartbeat:${HEARTBEAT_VERSION}
 ```
 
 ## build with gcp build API
 ```
+export GOOGLE_CLOUD_PROJECT="poseidon-xwang"
 gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/heartbeat .
 gcloud builds submit --tag gcr.io/poseidon-xwang/heartbeat .
 ```
