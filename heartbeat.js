@@ -8,6 +8,7 @@ function getInK8s() {
 }
 
 var isInK8s = getInK8s();
+// isInK8s = true; // for debug only
 console.log('isInK8s=' + isInK8s);
 
 var hostName = isInK8s?require('./lib/podName'):require('./lib/hostName');

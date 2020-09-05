@@ -41,6 +41,8 @@ spec:
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       - env:
+        - name: MY_cloud
+          value: gcp
         - name: MY_node
           valueFrom:
             fieldRef:

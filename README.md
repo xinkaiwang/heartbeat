@@ -53,6 +53,7 @@ docker push xinkaiw/heartbeat:${HEARTBEAT_VERSION}
 
 ## build with gcp build API
 ```
+export GOOGLE_CLOUD_PROJECT="poseidon-xwang"
 gcloud builds submit --tag gcr.io/${GOOGLE_CLOUD_PROJECT}/heartbeat .
 gcloud builds submit --tag gcr.io/poseidon-xwang/heartbeat .
 ```
